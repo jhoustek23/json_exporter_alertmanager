@@ -1,0 +1,15 @@
+---
+modules:
+  default:
+    metrics:
+    - name: Alertmanager_scrape
+      type: object
+      path: '{ [*] }'
+      labels:
+        alertname: '{ .labels.alertname }'
+        severity: '{ .labels.severity }'
+        status: '{ .status.state }'
+        fingerprint: '{ .fingerprint }'
+      values:
+        status: 1
+      help: Alertmanager_status_test
