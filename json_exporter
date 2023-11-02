@@ -1,0 +1,1 @@
+ARGS="--config.file=/etc/prometheus/json_exporter.yml"
