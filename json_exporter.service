@@ -1,0 +1,19 @@
+[Unit]
+Description=JSON_exporter
+Documentation=https://prometheus.io/docs/alerting/alertmanager/
+
+[Service]
+Restart=always
+User=prometheus
+Group=prometheus
+EnvironmentFile=/etc/default/json_exporter
+ExecStart=/usr/local/sbin/json_exporter $ARGS
+ExecReload=/bin/kill -HUP $MAINPID
+TimeoutStopSec=20s
+SendSIGKILL=no
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=json_exporter
+
+[Install]
+WantedBy=multi-user.target
