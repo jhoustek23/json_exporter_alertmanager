@@ -6,7 +6,7 @@ Check API is working:
 curl  http://localhost:9093/alertmanager/api/v2/alerts |jq
 ```
 
-Download and install json_exporter as systemd unit:
+Download and install json_exporter:
 ```
 wget https://github.com/prometheus-community/json_exporter/releases/download/v0.6.0/json_exporter-0.6.0.linux-amd64.tar.gz
 tar xf json_exporter-0.6.0.linux-amd64.tar.gz
@@ -26,6 +26,7 @@ edit labels you want to scrape in json_exporter.yml and copy file
 ```
 cp json_exporter.yml /etc/prometheus/json_exporter.yml
 ```
+Start json_exporter as systemd unit
 ```
 systemctl daemon-reload
 systemctl enable json_exporter
@@ -52,3 +53,5 @@ prom query example:
 ```
 sum(Alertmanager_scrape_status{alertname="PROD_OS_load15_above_cpu_count_for_1h"})
 ```
+
+PROFIT :)
