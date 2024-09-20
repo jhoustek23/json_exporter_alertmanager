@@ -1,5 +1,5 @@
 # json_exporter_alertmanager
-Scraping Alertmanager API to prometheus format
+# Scraping Alertmanager API to prometheus format
 
 Check API is working:
 ```
